@@ -1,0 +1,18 @@
+version: "3.5"
+services:
+  api:
+    build:
+      context: ./
+    container_name: api
+    environment:
+      MONGO_HOST: mongodb:27017
+      MONGO_DB: k8sinaweek
+      PORT: 9000
+    networks:
+      - k8sinaweek
+    ports:
+      - "9000:9000"
+    
+networks:
+  k8sinaweek:
+    name: k8sinaweek
