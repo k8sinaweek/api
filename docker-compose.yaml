@@ -5,9 +5,7 @@ services:
       context: ./
     container_name: api
     environment:
-      MONGO_HOST: mongodb:27017
-      MONGO_DB: k8sinaweek
-      PORT: 9000
+      MONGO_URI: mongodb://mongodb:27017/k8sinaweek
     networks:
       - k8sinaweek
     ports:

@@ -1,10 +1,11 @@
 const express = require('express')
 const mongo = require('mongodb').MongoClient;
 const app = express()
-const port = process.env.PORT
+
+const port = 9000
 
 const getCreator = () => {
-  return mongo.connect('mongodb://' + process.env.MONGO_HOST)
+  return mongo.connect(process.env.MONGO_URI)
     .then((client) => {
       const db = client.db(process.env.MONGO_DB)
       const creator = db.collection('creator')
